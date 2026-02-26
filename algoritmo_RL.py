@@ -35,7 +35,7 @@ dados = np.loadtxt(r"C:\Users\alunok08\Desktop\pyaula\slr06 (1) (1).csv",delimit
 print(dados)     
 X = dados[:, 0]
 Y = dados[:, 1]
-fig = px.scatter(x=X, y=Y)
+fig = px.scatter(x=X, y=Y, trendline="ols")
 
 fig.show()
 
@@ -51,7 +51,7 @@ print(modelo.predict(x_test))
 X = np.array([1,2,3])
 Y = np.array([1,4,8])
 
-fig2 = px.scatter(x=X, y=Y)
+fig2 = px.scatter(x=X, y=Y, trendline="ols")
 
 fig2.show()
 
