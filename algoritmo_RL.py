@@ -1,6 +1,8 @@
 #Algoritmo RL
 
 import numpy as np
+import plotly.express as px
+ 
 
 class LinearRegression: #Criando a classe
     def __init__(self,x, y): #Construtor
@@ -28,6 +30,21 @@ class LinearRegression: #Criando a classe
         print(f"Intercepto: {self.b0}")
         print(f"Coeficiente Angular: {self.b1}")
         
-        
-        
+
+dados = np.loadtxt(r"C:\Users\alunok08\Desktop\pyaula\slr06 (1) (1).csv",delimiter=",", skiprows=1 )       
+print(dados)     
+X = dados[:, 0]
+Y = dados[:, 1]
+fig = px.scatter(x=X, y=Y)
+
+fig.show()
+
+modelo = LinearRegression(X, Y)
+modelo.fit()
+print("b0 =", modelo.b0)
+print("b1 =", modelo.b1)
+print(modelo.summary())
+x_test = [34, 90, 76, 54]
+print(modelo.predict(x_test))
+
 #"Só mais um toque do Rei Allan Wa ha boom alakazan"
