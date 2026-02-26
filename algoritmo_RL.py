@@ -47,4 +47,21 @@ print(modelo.summary())
 x_test = [34, 90, 76, 54]
 print(modelo.predict(x_test))
 
+#testar com esses dados
+X = np.array([1,2,3])
+Y = np.array([1,4,8])
+
+fig2 = px.scatter(x=X, y=Y)
+
+fig2.show()
+
+modelo2 = LinearRegression(X, Y)
+modelo2.fit()
+print("b0 =", modelo2.b0)
+print("b1 =", modelo2.b1)
+print(modelo2.summary())
+x_test = [34, 90, 76, 54]
+print(modelo2.predict(x_test))
+
+
 #"Só mais um toque do Rei Allan Wa ha boom alakazan"
