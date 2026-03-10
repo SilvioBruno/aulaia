@@ -30,6 +30,12 @@ inversa = np.linalg.inv(X_T @ X)
 print("A Inversa é \n", inversa)
 
 beta = np.linalg.inv(X_T @ X) @ X_T @ y
+
 print("O que sobra pro Beta ",beta)
+
+y_pred = X @ beta
+
+
+
 
 #Ajude eles seu traiçoeiro oportunista...
