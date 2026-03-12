@@ -68,7 +68,13 @@ fig = go.Figure()
 fig.add_scatter3d(x=x1,y=x2,z=y, mode = "markers", marker=dict(color="red", size=3), name = "dados originais")  
 fig.add_scatter3d(x=x1,y=x2,z=y_pred, mode = "markers", marker = dict(color="green", size=3), name = "dados preditos")
 
-fig.add_surface(x=x1_grid, y=x2_grid,z=y_grid, opacity=0.5)
+fig.add_surface(x=x1_grid, y=x2_grid,z=y_grid, opacity=0.5, showscale=False)
+
+fig.update_layout(title = "Gráfico da regressão Multipla",
+                  scene=dict(xaxis_title="x1",
+                             yaxis_title="x2",
+                             zaxis_title="y"))
+
 fig.show()
     
     
