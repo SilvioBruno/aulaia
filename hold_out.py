@@ -24,10 +24,20 @@ def train_test_split(X,y,test_size=0.3, random_state=42):
     train_indices = indices[n_test:]
     print("Dados de treino",train_indices)
     if X.ndim == 1:
-        X_train, X_test = X_train[train_indices], X_test[test_indices]
+        X_train, X_test = X[train_indices], X[test_indices]
     else:
-        X_train, X_test = X_train[train_indices,:], X_test[test_indices,:]
+        X_train, X_test = X[train_indices,:], X[test_indices,:]
     y_train, y_test = y[train_indices], y[test_indices]
-    X_train, X_test , y_train, y_test
+    
+    return X_train, X_test , y_train, y_test
 
-#preste atenção, é o meu cão...
+x1 = np.array([2,8,11,10,8,4,2,2,9,8])
+
+x2 = np.array([50,110,120,550,295,200,375,52,100,300])
+
+y = np.array([9.95,24.45,31.75,35,25.02,16.86,14.38,9.6,24.35,27.5])
+
+X = np.column_stack((x1,x2))
+
+
+X_train, X_test , y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
