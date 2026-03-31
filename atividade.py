@@ -60,3 +60,11 @@ model.fit(X_train, y_train) #treinamento
 y_pred = model.predict(X_test) #predição
 print("Real", y_test)
 print("Previstos", y_pred)
+
+def r2_score(y_true, y_test):
+    rss = np.sum((y_true - y_pred)**2)
+    tss = np.sum((y_true - np.mean(y_true))**2)
+    r2_score = 1 - (rss/tss)
+    return r2_score
+
+print(r2_score(y_test, y_pred))
